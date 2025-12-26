@@ -1,0 +1,14 @@
+import 'package:note_app/domain/model/note.dart';
+import 'package:note_app/domain/util/note_order.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'notes_state.freezed.dart';
+
+@freezed
+abstract class NotesState with _$NotesState {
+  factory NotesState({
+    required List<Note> notes,
+    required NoteOrder noteOrder,
+    required bool isOrderSectionVisible,
+  }) = _NotesState;
+}
