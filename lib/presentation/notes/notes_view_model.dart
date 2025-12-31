@@ -58,7 +58,8 @@ class NotesViewModel with ChangeNotifier {
 
   Future<void> _restoreNote() async {
     if (_recentlyDeletedNote != null) {
-      await useCases.addNote(_recentlyDeletedNote!);
+      // call 생략 가능
+      await useCases.addNote.call(_recentlyDeletedNote!);
       _recentlyDeletedNote = null;
 
       _loadNotes();
