@@ -9,4 +9,4 @@ const dev = Environment('dev');
 const prod = Environment('prod');
 
 @InjectableInit()
-Future<void> configureDependencies() => getIt.init(environment: Environment.prod);
+Future<void> configureDependencies() => getIt.init(environment: Environment.dev);

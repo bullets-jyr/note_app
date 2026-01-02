@@ -2,9 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:note_app/domain/repository/note_repository.dart';
-import 'package:note_app/presentation/add_edit_note/add_edit_note_screen.dart';
-import 'package:note_app/presentation/add_edit_note/add_edit_note_view_model.dart';
 import 'package:note_app/presentation/notes/components/order_section.dart';
 import 'package:note_app/presentation/notes/notes_event.dart';
 import 'package:note_app/presentation/notes/notes_view_model.dart';
@@ -22,8 +19,8 @@ class NotesScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Your note',
+        title: Text(
+          viewModel.titleRepository.getTitle(),
           style: TextStyle(fontSize: 30, color: Colors.white),
         ),
         actions: [
